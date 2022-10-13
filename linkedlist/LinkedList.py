@@ -38,7 +38,7 @@ class LinkedList:
                 return True
             start = start.next
         return False
-
+    def
 
 if __name__ == '__main__':
     head = LinkedList()
