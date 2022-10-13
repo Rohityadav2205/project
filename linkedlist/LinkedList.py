@@ -7,14 +7,44 @@ class ListNode:
         return str(self.value)
 
 
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def addfirst(self, value):
+        newnode = ListNode(value)
+        newnode.next = self.head
+        self.head = newnode
+
+    def __len__(self):
+        n = 0
+        start = head.head
+        while start is not None:
+            n += 1
+            start = start.next
+        return n
+
+    def traverse(self):
+        start = head.head
+        while start is not None:
+            print(start.value, end=',')
+            start = start.next
+        print()
+
+    def find(self, value):
+        start = head.head
+        while start is not None:
+            if start.value == value:
+                return True
+            start = start.next
+        return False
+
+
 if __name__ == '__main__':
-    newnode = ListNode(1)
-    newnode.next = ListNode(2)
-    newnode.next.next = ListNode(3)
-    newnode.next.next.next = ListNode(4)
-    newnode.next.next.next.next = ListNode(9)
-    # newnode=ListNode(1) command is used to connect or print first node after this you can add  next newnode.next=ListNode(2)
-    # you can add many list use this command newnode.next.next=ListNode(3)
-    while newnode is not None:
-        print(newnode.value)
-        newnode = newnode.next
+    head = LinkedList()
+    for i in range(3, 9):
+        head.addfirst(i)
+    head.traverse()
+    print(head.find(7))
+    print(head.find(-7))
+    print(len(head))
