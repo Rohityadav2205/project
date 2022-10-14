@@ -38,11 +38,11 @@ class LinkedList:
                 return True
             start = start.next
         return False
-    def
+
 
 if __name__ == '__main__':
     head = LinkedList()
-    for i in range(3, 9):
+    for i in range(1, 9):
         head.addfirst(i)
     head.traverse()
     print(head.find(7))
